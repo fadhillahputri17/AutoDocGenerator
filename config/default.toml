@@ -1,0 +1,80 @@
+[application]
+name = "AutoDocGenerator"
+version = "0.1.0"
+
+
+[paths]
+input_directory = "input"
+output_directory = "output"
+log_directory = "logs"
+
+
+[document]
+page_size = "A4"
+orientation = "portrait"
+images_per_page = 2
+
+title_font = "Times New Roman"
+title_font_size_pt = 12
+title_bold = false
+title_alignment = "center"
+
+first_page_image_width_cm = 13.71
+first_page_image_height_cm = 13.71
+
+other_page_image_width_cm = 14.16
+other_page_image_height_cm = 14.16
+
+transfer_border_width_pt = 1.5
+transfer_border_color = "000000"
+
+
+[image_processing]
+supported_extensions = [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp"
+]
+
+crop_transfer_images = true
+add_border_to_transfer_images = true
+
+crop_real_receipts = false
+add_border_to_real_receipts = false
+
+real_receipt_filename_keywords = [
+    "NOTA REAL",
+    "NOTA_REAL",
+    "NOTA-REAL"
+]
+
+transfer_initial_top_trim_ratio = 0.12
+transfer_initial_bottom_trim_ratio = 0.05
+transfer_initial_left_trim_ratio = 0.02
+transfer_initial_right_trim_ratio = 0.02
+
+transfer_background_threshold = 245
+transfer_saturation_threshold = 20
+transfer_min_component_area = 1500
+transfer_content_padding_px = 12
+
+transfer_square_output = false
+
+
+[ocr]
+language = "eng"
+
+authorized_datetime_priority = true
+created_datetime_fallback = true
+generic_date_fallback = true
+
+minimum_confidence = 40.0
+
+
+[sorting]
+primary_field = "transaction_datetime"
+secondary_field = "reference_number"
+final_fallback_field = "filename"
+
+undetected_datetime_position = "last"

@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=75.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "autodocgenerator"
+version = "0.1.0"
+description = "Automatic Word document generator for transfer proofs and receipts."
+requires-python = ">=3.12,<3.14"
+
+dependencies = [
+    "Pillow>=11.0,<12.0",
+    "PyMuPDF>=1.26.7,<2.0",
+    "python-docx>=1.1.2,<2.0",
+    "opencv-python-headless>=4.10,<5.0",
+    "pytesseract>=0.3.13,<1.0",
+    "pydantic>=2.10,<3.0",
+    "pydantic-settings>=2.7,<3.0",
+    "platformdirs>=4.3,<5.0",
+    "rich>=13.9,<15.0",
+    "typer>=0.15,<1.0"
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9.0",
+    "pytest-cov>=6.0,<7.0",
+    "pytest-mock>=3.14,<4.0",
+    "ruff>=0.9,<1.0",
+    "mypy>=1.14,<2.0"
+]
+
+
+[project.scripts]
+autodoc = "autodocgenerator.presentation.cli:app"
+
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config"
+]
+
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
+
+[[tool.mypy.overrides]]
+module = [
+    "cv2",
+    "pytesseract",
+    "pymupdf",
+    "docx.*"
+]
+ignore_missing_imports = true   

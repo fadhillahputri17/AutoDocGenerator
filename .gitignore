@@ -1,0 +1,203 @@
+# ============================================================
+# AutoDocGenerator - .gitignore
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Python bytecode / cache
+# ------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+
+# ------------------------------------------------------------
+# Python package metadata
+# ------------------------------------------------------------
+
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+
+# ------------------------------------------------------------
+# Virtual environments
+# ------------------------------------------------------------
+
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+
+# ------------------------------------------------------------
+# Testing / linting / coverage cache
+# ------------------------------------------------------------
+
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.tox/
+.nox/
+
+
+# ------------------------------------------------------------
+# AutoDocGenerator private input/output
+#
+# IMPORTANT:
+# These folders may contain transaction evidence,
+# receipts, company documents, and generated documents.
+# Never commit them to a public repository.
+# ------------------------------------------------------------
+
+input/
+output/
+
+
+# ------------------------------------------------------------
+# PyInstaller build artifacts
+# ------------------------------------------------------------
+
+build/
+dist/
+
+
+# ------------------------------------------------------------
+# Inno Setup installer output
+# ------------------------------------------------------------
+
+installer_output/
+
+
+# ------------------------------------------------------------
+# Environment variables / secrets
+# ------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+
+
+# ------------------------------------------------------------
+# Logs / temporary files
+# ------------------------------------------------------------
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+~$*
+temp/
+tmp/
+
+
+# ------------------------------------------------------------
+# IDE / Editor
+# ------------------------------------------------------------
+
+.vscode/
+.idea/
+*.code-workspace
+
+
+# ------------------------------------------------------------
+# Windows system files
+# ------------------------------------------------------------
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+
+# ------------------------------------------------------------
+# macOS system files
+# ------------------------------------------------------------
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# ------------------------------------------------------------
+# Jupyter Notebook
+# ------------------------------------------------------------
+
+.ipynb_checkpoints/
+
+
+# ------------------------------------------------------------
+# Python build / distribution
+# ------------------------------------------------------------
+
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+MANIFEST
+
+
+# ------------------------------------------------------------
+# Installer / executable files
+#
+# Generated installers and executables should normally be
+# distributed through GitHub Releases instead of source control.
+# ------------------------------------------------------------
+
+*.exe
+*.msi
+
+
+# ------------------------------------------------------------
+# AutoDocGenerator recovery / local notes
+# ------------------------------------------------------------
+
+README_RECOVERY
+README_RECOVERY.txt
+
+
+# ============================================================
+# IMPORTANT:
+#
+# DO NOT IGNORE:
+#
+# src/
+# tests/
+# launcher.py
+# AutoDocGenerator.spec
+# AutoDocGenerator.iss
+# build_windows.bat
+# build_installer.bat
+# build_release.bat
+# README.md
+# BUILD.md
+# requirements.txt
+# pyproject.toml
+#
+# These files are part of the project's source code,
+# documentation, testing, and build configuration.
+# ============================================================
