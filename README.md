@@ -96,3 +96,74 @@ The application has been tested locally on Windows and can generate formatted tr
 This project was built as a practical solution to a repetitive finance workflow.
 
 It is also part of my personal exploration of using AI and automation to solve real-world operational problems.
+
+
+
+
+AUTODOCGENERATOR — INSTALLER BUILD GUIDE
+Package Files
+
+The installer build package contains the following files:
+
+AutoDocGenerator.iss
+build_installer.bat
+build_release.bat
+File Location
+
+Copy all three files directly into:
+
+D:\Project\AutoDocGenerator
+Final Project Structure
+D:\Project\AutoDocGenerator
+│
+├── AutoDocGenerator.iss
+├── build_installer.bat
+├── build_release.bat
+├── build_windows.bat
+├── AutoDocGenerator.spec
+├── launcher.py
+│
+├── dist
+│   └── AutoDocGenerator
+│       ├── AutoDocGenerator.exe
+│       └── other required files and folders
+│
+└── installer_output
+    └── AutoDocGenerator_Setup_0.1.0.exe
+Build Instructions
+Make sure Inno Setup is installed.
+Make sure the Python application passes the following checks:
+ruff check src tests launcher.py
+pytest -q
+Run:
+build_release.bat
+Alternative: Build Separately
+
+Instead of running the complete release build, you can run the build process separately in the following order:
+
+build_windows.bat
+build_installer.bat
+Final Output
+
+The completed installer will be generated at:
+
+installer_output\AutoDocGenerator_Setup_0.1.0.exe
+
+The setup file can be distributed as a single installer file.
+
+The installer copies the entire contents of:
+
+dist\AutoDocGenerator
+
+rather than only copying AutoDocGenerator.exe. This ensures that all supporting files and dependencies generated during the build process are included.
+
+Tesseract OCR Requirement
+
+Tesseract OCR is not currently bundled with the AutoDocGenerator installer.
+
+Therefore, the destination computer must either:
+
+have Tesseract OCR installed, or
+allow the user to manually select the location of tesseract.exe through the AutoDocGenerator application.
+
+This is a current limitation of version 0.1.0 and may be improved in a future release.
